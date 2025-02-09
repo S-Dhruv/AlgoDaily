@@ -19,7 +19,7 @@ app.use(
         secret: process.env.SESSION_KEY,
         resave: false,
         saveUninitialized: true,
-        cookie: { secure: false }, // Set to `true` in production with HTTPS
+        cookie: { secure: true }, // Set to `true` in production with HTTPS
     })
 );
 //passport for auth
