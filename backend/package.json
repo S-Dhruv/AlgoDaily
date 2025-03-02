@@ -5,7 +5,7 @@
   "scripts": {
     "test": "jest",
     "start": "nodemon server.js",
-    "dep": "node src/index.js",
+    "dep": "node server.js",
     "connect": "python langchain_api.py"
   },
   "type": "module",
