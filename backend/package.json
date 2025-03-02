@@ -4,7 +4,9 @@
   "main": "server.js",
   "scripts": {
     "test": "jest",
-    "start": "nodemon server.js"
+    "start": "nodemon server.js",
+    "dep": "node src/index.js",
+    "connect": "python langchain_api.py"
   },
   "type": "module",
   "author": "",
@@ -14,6 +16,7 @@
     "@langchain/mistralai": "^0.2.0",
     "cookie-session": "^2.1.0",
     "dotenv": "^16.4.7",
+    "dsadq-updated": "file:..",
     "express": "^4.21.2",
     "express-session": "^1.18.1",
     "google-auth-library": "^9.15.1",

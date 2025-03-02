@@ -1,0 +1,16 @@
+{
+  "name": "dsadq-updated",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "build": "npm install --prefix backend && npm install --legacy-peer-deps --prefix frontend && npm run build --prefix frontend",
+    "start": "npm run dep --prefix backend && npm run connect --prefix backend &&   "
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "@react-oauth/google": "^0.12.1"
+  }
+}

@@ -8,18 +8,21 @@ import passport from "passport";
 import DailyModel from "./model/Daily.js";
 import "./passport.js"; 
 import cron from 'node-cron';
-
+import path from "path";
 
 dotenv.config();
 
 const app = express();
+const __dirname = path.resolve();
+
+
 //cookie creation
 app.use(
     session({
         secret: process.env.SESSION_KEY,
         resave: false,
         saveUninitialized: true,
-        cookie: { secure: true }, // Set to `true` in production with HTTPS
+        cookie: { secure: true }, // Set to `true` in prod  uction with HTTPS
     })
 );
 //passport for auth
@@ -32,9 +35,17 @@ app.use(passport.session());
 //     methods:"GET,DELETE,POST,PUT",
 //     credentials: true, 
 // }));
+
 app.use(cors());
 //to accept data as json
 app.use(express.json()); 
+
+if(process.env.NODE_ENV === "production"){
+    app.use(express.static(path.join(__dirname, "../frontend/dist")));
+    app.get("*", (req,res)=>{
+        res.sendFile(path.join(__dirname, "../frontend/dist/index.html"));
+    })
+}
 
 //user routes here
 app.use( "/auth",UserRoutes)

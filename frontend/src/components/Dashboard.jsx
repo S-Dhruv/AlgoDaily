@@ -30,7 +30,7 @@ const Dashboard = () => {
                 console.log("Received questions:", data.questions);
 
                 localStorage.setItem("questions", JSON.stringify(data.questions));
-
+                localStorage.setItem("email",email);
                 setQuestions(data.questions);
             }
         }

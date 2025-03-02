@@ -6,6 +6,7 @@ from flask_cors import CORS
 import os
 from dotenv import load_dotenv
 import traceback
+from waitress import serve 
 
 load_dotenv()
 
@@ -56,4 +57,5 @@ def ask():
         return jsonify({'error': str(e)}), 500
 
 if __name__ == '__main__':
-    app.run(port=5000, debug=True)  
+    print("Starting server with Waitress...")
+    serve(app, host="0.0.0.0", port=5000)
