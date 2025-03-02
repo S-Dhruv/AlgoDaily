@@ -7,8 +7,8 @@ dotenv.config();
 
 const callbackURL =
   process.env.NODE_ENV === "development"
-    ? "http://localhost:3001/auth/google/callback"
-    : "https://threedsa.onrender.com/auth/google/callback";
+    ? "https://threedsa.onrender.com/auth/google/callback"
+    : "http://localhost:3001/auth/google/callback";
 
 passport.use(
   new GoogleStrategy(
