@@ -18,9 +18,9 @@ const AskAI = () => {
 
         setIsLoading(true);
         setError(null);
-
+        const link = import.meta.env.VITE_MODE === "development" ? "http://localhost:5000/ask" : "/ask"
         try {
-            const response = await fetch('http://localhost:5000/ask', {
+            const response = await fetch(link, {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json'
