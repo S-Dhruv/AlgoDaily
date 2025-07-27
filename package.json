@@ -3,9 +3,10 @@
   "version": "1.0.0",
   "main": "server.js",
   "scripts": {
-    "build": "npm install --prefix backend && npm install --legacy-peer-deps --prefix frontend && npm run build --prefix frontend",
-    "start": "npm run dep --prefix backend && npm run connect --prefix backend"
-  },
+  "build": "npm install --prefix backend && npm install --legacy-peer-deps --prefix frontend && npm run build --prefix frontend",
+  "start": "npm run dep --prefix backend && npm run connect --prefix backend",
+  "setup-python": "pip install -r requirements.txt"
+},
   "keywords": [],
   "author": "",
   "license": "ISC",
